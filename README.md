@@ -1,26 +1,21 @@
-Bank Customer Churn Prediction Model
-This project aims to build a machine learning model to predict customer churn for a bank using historical customer data. The model uses a Support Vector Machine (SVM) classifier to predict whether a customer will churn or not based on various features such as gender, age, balance, and more.
+# Bank Customer Churn Prediction Model
 
-Project Structure
-bash
-Copy code
-/Bank-Customer-Churn/
-│
-├── bankchurn.ipynb          # Jupyter Notebook containing the machine learning code
-├── bank_customer_churn.csv  # Dataset containing customer information
-└── README.md                # Project description and instructions
-Requirements
+This project aims to build a machine learning model to predict customer churn for a bank using historical customer data. The model uses a **Support Vector Machine (SVM)** classifier to predict whether a customer will churn or not based on various features such as gender, age, balance, and more.
+
+## Project Structure
+/Bank-Customer-Churn/ │ ├── bankchurn.ipynb # Jupyter Notebook containing the machine learning code ├── bank_customer_churn.csv # Dataset containing customer information └── README.md # Project description and instructions
+
+## Requirements
+
 To run this project, you'll need the following Python libraries:
 
-pandas: For data manipulation and analysis.
-sklearn: For machine learning models, data preprocessing, and evaluation.
-imblearn: For handling imbalanced data using SMOTE (Synthetic Minority Over-sampling Technique).
-matplotlib: For visualizations (optional, if you want to visualize results).
-Installation
-You can install the required libraries using pip:
+- `pandas`: For data manipulation and analysis.
+- `scikit-learn`: For machine learning models, data preprocessing, and evaluation.
+- `imbalanced-learn`: For handling imbalanced data using SMOTE (Synthetic Minority Over-sampling Technique).
+- `matplotlib`: For visualizations (optional, if you want to visualize results).
 
-bash
-Copy code
+### Installation
+You can install the required libraries using pip:
 pip install pandas scikit-learn imbalanced-learn matplotlib
 Dataset
 The dataset (bank_customer_churn.csv) contains historical data of bank customers, with features like:
@@ -53,9 +48,6 @@ The model is evaluated on the test data (X_test and y_test) using metrics like p
 A confusion matrix is used to assess the true positives, true negatives, false positives, and false negatives.
 How to Run the Code
 Clone the Repository: First, clone the repository to your local machine or Google Colab:
-
-bash
-Copy code
 git clone https://github.com/gnanateja09/Bank-Customer-Churn.git
 cd Bank-Customer-Churn
 Load the Dataset: Place the bank_customer_churn.csv file in the same directory or provide the correct file path in the code.
@@ -68,8 +60,6 @@ The best hyperparameters found using GridSearchCV.
 The classification report with metrics like precision, recall, F1-score.
 The confusion matrix.
 Sample Output:
-bash
-Copy code
 Best Parameters: {'C': 1, 'gamma': 'scale', 'kernel': 'rbf'}
 Classification Report:
               precision    recall  f1-score   support
@@ -86,21 +76,3 @@ Confusion Matrix:
  [ 294   99]]
 Conclusion
 This machine learning project demonstrates how to use an SVM classifier to predict customer churn in a bank. It involves key techniques like data preprocessing, handling imbalanced data, hyperparameter tuning, and model evaluation. The model's effectiveness can be assessed using various metrics, and improvements can be made by exploring different machine learning algorithms or tuning the model further.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Explanation of Code in the README:
-Data Preprocessing:
-
-LabelEncoder converts categorical features to numerical values so that the SVM algorithm can process them.
-SMOTE helps generate synthetic samples for the minority class, improving the model’s ability to detect churn.
-Feature Scaling:
-
-StandardScaler ensures the data is on the same scale, so features like CreditScore or Age are treated equally.
-Model:
-
-The SVM classifier is trained and tuned using GridSearchCV. This helps find the best combination of hyperparameters (C, gamma, kernel).
-Model Evaluation:
-
-The classification_report and confusion_matrix provide insights into the model's performance, especially in terms of precision and recall for the imbalanced target classes.
